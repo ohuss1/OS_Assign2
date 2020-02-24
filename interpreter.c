@@ -6,6 +6,7 @@
  */
 #include "interpreter.h"
 #include "shellmemory.h"
+#include "kernel.h"
 
 #include <stdlib.h>
 #include <stdint.h>

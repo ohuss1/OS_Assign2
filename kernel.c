@@ -8,7 +8,10 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "shell.h"
+#include "ram.h"
+myinit(char *filename){
 
+}
 int main(int argc, const char *argv[]){
 shellUI();
 }
