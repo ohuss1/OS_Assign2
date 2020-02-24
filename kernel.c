@@ -9,10 +9,15 @@
 #include <stdlib.h>
 #include "shell.h"
 #include "ram.h"
-myinit(char *filename){
 
-}
 int main(int argc, const char *argv[]){
 shellUI();
+}
+void myinit(char *filename){
+	int beg;
+	int end;
+	FILE *ptr=fopen(filename,"r");
+	addToRAM(ptr,&beg,&end);
+	//return 0;
 }
 

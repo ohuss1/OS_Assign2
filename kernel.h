@@ -7,5 +7,5 @@
 
 #ifndef KERNEL_H_
 #define KERNEL_H_
-myinit(char *filename);
+void myinit(char *filename);
 #endif /* KERNEL_H_ */
