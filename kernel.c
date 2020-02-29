@@ -17,6 +17,10 @@ void myinit(char *filename){
 	int beg;
 	int end;
 	FILE *ptr=fopen(filename,"r");
+	printf("file open");
+	if(ptr==NULL){
+		printf("filenotfound");
+	}
 	addToRAM(ptr,&beg,&end);
 	//return 0;
 }

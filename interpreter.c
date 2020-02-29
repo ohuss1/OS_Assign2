@@ -148,7 +148,9 @@ int set(const char *key, const char *value)
 int exec(char *programs[],int numProg)//one program exec (have 3 exec functions
 {
 if(numProg==1){
-	printf("One program: %s \n",programs[1]);}
+	printf("One program: %s \n",programs[1]);
+	myinit(programs[1]);
+}
 else if(numProg==2){
 	printf("The 2 programs are \n %s \n %s \n",programs[1],programs[2]);
 }
