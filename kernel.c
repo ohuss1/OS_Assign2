@@ -14,12 +14,13 @@ int main(int argc, const char *argv[]){
 shellUI();
 }
 void myinit(char *filename){
+	printf("in myinit\n");
 	int beg;
 	int end;
 	FILE *ptr=fopen(filename,"r");
-	printf("file open");
 	if(ptr==NULL){
-		printf("filenotfound");
+		printf("file not Found");
+		return;
 	}
 	addToRAM(ptr,&beg,&end);
 	//return 0;

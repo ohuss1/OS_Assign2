@@ -153,9 +153,14 @@ if(numProg==1){
 }
 else if(numProg==2){
 	printf("The 2 programs are \n %s \n %s \n",programs[1],programs[2]);
+	myinit(programs[1]);
+	myinit(programs[2]);
 }
 else if(numProg==3){
 	printf("The 3 programs are \n %s \n %s \n %s \n",programs[1],programs[2],programs[3]);
+	myinit(programs[1]);
+	myinit(programs[2]);
+	myinit(programs[3]);
 }
 else{
 

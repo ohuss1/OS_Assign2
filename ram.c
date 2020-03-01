@@ -7,44 +7,36 @@
 #include <stdio.h>
 #include <string.h>
 char buffer[1000];
+int ram_size=1000;
 char *ram[1000];
 int c=0;
-int firstAv;
-int Slotavailable()
+void clearRam()
 {
-    for (int i = 0; i < 1000; i++)
+    for (int i = 0; i < ram_size; i++)
     {
-        if (!ram[i])
-        {
-            return i;
-        }
+    	ram[i]=NULL;
+
     }
-    return -1;
 }
 void addToRAM(FILE *p, int *start, int *end){
 	//FILE *file = fopen(p, "r");
-	printf("inaddtoRam");
-	firstAv=Slotavailable();
-	c=firstAv;
 	*start=c;
+	printf("inaddtoRam\n");
 	//int i=0;
-	char buffer[1000];
 	while(!feof(p)){
-		if(c>999){
-				printf("error out of ramspace");
-				*start=-1;
-				*end=-1;
-				return;
-			}
+	char buffer[1000];
 	fgets(buffer,999,p);
-	if(strstr(ram[c],"NULL")!=NULL){
 	ram[c] = strdup(buffer);
 	printf("ram %d has %s",c,ram[c]);
+	if(c==33){
+		memset(buffer, '\0', 999);
+		clearRam();
+		c=0;
+		*start=c;
+		*end=c;
+		printf("Ram outof space");
+		break;
 	}
-	else{
-		continue;
-	}
-
 	c++;
 	}
 	*end=c;
